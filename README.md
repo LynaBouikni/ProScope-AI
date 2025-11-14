@@ -113,7 +113,7 @@ Human-rated relevance, hallucination rate, task extraction quality.
 
 ---
 
-##🛣️ Roadmap
+## 🛣️ Roadmap
 
  Basic FastAPI backend & RAG pipeline
 
