@@ -82,3 +82,53 @@ uvicorn app.main:app --reload
 # 5. Run Streamlit UI 
 streamlit run ui/app.py
 ```
+
+---
+
+## 🔌 API Endpoints (FastAPI)
+
+POST /projects/ – create a project
+
+GET /projects/ – list projects
+
+POST /projects/{project_id}/documents/ – upload a document
+
+POST /projects/{project_id}/ask/ – ask a question or request summary/actions/risks
+
+GET /projects/{project_id}/history/ – get past Q&A for this project
+
+(See app/api for more details.)
+
+🧪 Evaluation (Optional but Recommended)
+
+Small synthetic QA set per project.
+
+Compare:
+
+LLM alone vs. RAG LLM (with retrieval).
+
+Metrics:
+
+Human-rated relevance, hallucination rate, task extraction quality.
+
+---
+
+##🛣️ Roadmap
+
+ Basic FastAPI backend & RAG pipeline
+
+ Streamlit interface
+
+ Multi-user authentication (optional)
+
+ Support for Word / HTML / Markdown
+
+ Better evaluation & logging
+
+ Cloud deployment (Render / Railway / etc.)
+
+---
+
+##📄 License
+
+MIT
