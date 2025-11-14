@@ -129,6 +129,61 @@ Human-rated relevance, hallucination rate, task extraction quality.
 
 ---
 
-##📄 License
+## 📄 License
 
 MIT
+
+
+---
+
+## 📁 3. Folder Structure
+
+Create something like this:
+
+```text
+proscope-ai/
+│
+├── app/
+│   ├── main.py              # FastAPI entrypoint
+│   ├── api/
+│   │   ├── projects.py      # create/list projects
+│   │   ├── documents.py     # upload docs
+│   │   └── qa.py            # ask questions / modes
+│   ├── core/
+│   │   ├── config.py        # settings (API keys, paths)
+│   │   └── logging.py
+│   ├── models/
+│   │   ├── db_models.py     # SQLAlchemy models for Project, Document, Chunk, Query
+│   │   └── schemas.py       # Pydantic models for API
+│   ├── services/
+│   │   ├── ingestion.py     # extract text, chunking
+│   │   ├── embeddings.py    # embed text, vector store operations
+│   │   ├── rag_pipeline.py  # retrieval + LLM call
+│   │   └── tasks.py         # post-processing, task extraction parsing
+│   └── db/
+│       ├── database.py      # DB session + init
+│       └── migrations/      # if you use alembic later
+│
+├── ui/
+│   └── app.py               # Streamlit frontend
+│
+├── tests/
+│   ├── test_ingestion.py
+│   ├── test_rag_pipeline.py
+│   └── test_api.py
+│
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── Dockerfile
+```
+
+## 🌐 4. API Endpoints Design
+
+You don’t need all at once – but here’s the spec you can grow into.
+
+POST /projects/
+
+Create a new project.
+
+Body (JSON):
